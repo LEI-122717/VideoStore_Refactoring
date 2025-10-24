@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
-    <Class name="v2.Rental" x="298" y="13">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"
-            accessors-accepted="true" constructors-accepted="false"/>
-        <Association destinationClassName="v2.Movie"
-            endpointName="_movie" kind="Simple"/>
-        <Communication destinationClassName="v2.Movie"/>
-    </Class>
-    <Class name="v2.Movie.Code" x="48" y="173">
+    <Class name="v3.Movie.Code" x="47" y="174">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="false"/>
@@ -21,7 +9,7 @@
             default-accepted="false" static-accepted="false"
             accessors-accepted="false" constructors-accepted="false"/>
     </Class>
-    <Class name="v2.Movie" x="26" y="21">
+    <Class name="v3.Customer" x="568" y="8">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -29,20 +17,32 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Association destinationClassName="v2.Movie.Code"
-            endpointName="_priceCode" kind="Simple"/>
+        <Association destinationClassName="v3.Rental"
+            endpointName="_rentals" kind="Simple"/>
+        <Communication destinationClassName="v3.Rental"/>
+        <Communication destinationClassName="v3.Movie"/>
     </Class>
-    <Class name="v2.Customer" x="565" y="13">
+    <Class name="v3.Rental" x="299" y="16">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="false"/>
+            default-accepted="true" static-accepted="true"/>
         <MethodDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Association destinationClassName="v2.Rental"
-            endpointName="_rentals" kind="Simple"/>
-        <Communication destinationClassName="v2.Rental"/>
-        <Communication destinationClassName="v2.Movie"/>
+        <Association destinationClassName="v3.Movie"
+            endpointName="_movie" kind="Simple"/>
+        <Communication destinationClassName="v3.Movie"/>
+    </Class>
+    <Class name="v3.Movie" x="26" y="24">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="false"/>
+        <Association destinationClassName="v3.Movie.Code"
+            endpointName="_priceCode" kind="Simple"/>
     </Class>
 </ClassDiagram>
