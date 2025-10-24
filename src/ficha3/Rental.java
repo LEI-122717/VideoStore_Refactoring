@@ -25,7 +25,6 @@ public class Rental
     {
         double result = 0;
 
-        // determine amounts for each line
         switch (getMovie().getPriceCode())
         {
             case REGULAR:
