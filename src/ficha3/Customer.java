@@ -1,20 +1,18 @@
 package ficha3;
 
-import v7.Rental;
-
 import java.util.Vector;
 
 public class Customer
 {
     private String			_name;
-    private Vector<v7.Rental>	_rentals	= new Vector<v7.Rental>();
+    private Vector<Rental>	_rentals	= new Vector<Rental>();
 
     public Customer(String _name)
     {
         this._name = _name;
     }
 
-    public void addRental(v7.Rental arg)
+    public void addRental(Rental arg)
     {
         _rentals.addElement(arg);
     }
@@ -29,7 +27,7 @@ public class Customer
         // header
         String result = "Rental Record for " + getName() + "\n";
 
-        for (v7.Rental each : _rentals)
+        for (Rental each : _rentals)
             result += "\t" + each.getMovie().getTitle() + "\t" + each.getMovie().getRentalAmount(each.getDaysRented()) + "\n";
 
         // add footer lines
@@ -45,7 +43,7 @@ public class Customer
         result += "<h2>Rental Record for <i>" + getName() + "</i></h2>\n";
 
         result += "<ul>\n";
-        for (v7.Rental each : _rentals)
+        for (Rental each : _rentals)
             result += "\t<li>" + each.getMovie().getTitle() + "\t" +  each.getMovie().getRentalAmount(each.getDaysRented()) +"\n";
         result += "</ul>\n";
 
@@ -60,7 +58,7 @@ public class Customer
     public int getTotalFrequentRenterPoints()
     {
         int frequentRenterPoints = 0;
-        for (v7.Rental each : _rentals)
+        for (Rental each : _rentals)
             frequentRenterPoints += each._movie.getFrequentRentalPoints(each.getDaysRented());
         return frequentRenterPoints;
     }
