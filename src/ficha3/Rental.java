@@ -2,18 +2,13 @@ package ficha3;
 
 public class Rental
 {
-    private Movie	_movie;
+    Movie	_movie;
     private int		_daysRented;
 
-    public Rental(Movie m1, int daysRented)
+    public Rental(Movie movie, int daysRented)
     {
-        _movie = m1;
+        _movie = movie;
         _daysRented = daysRented;
-    }
-
-    public Movie getMovie()
-    {
-        return _movie;
     }
 
     public int getDaysRented()
@@ -21,31 +16,8 @@ public class Rental
         return _daysRented;
     }
 
-    public double getAmount()
+    public Movie getMovie()
     {
-        double result = 0;
-
-        switch (getMovie().getPriceCode())
-        {
-            case REGULAR:
-                result += 2;
-                if (getDaysRented() > 2)
-                    result += (getDaysRented() - 2) * 1.5;
-                break;
-            case NEW_RELEASE:
-                result += getDaysRented() * 3;
-                break;
-            case CHILDRENS:
-                result += 1.5;
-                if (getDaysRented() > 3)
-                    result += (getDaysRented() - 3) * 1.5;
-                break;
-        }
-        return result;
-    }
-
-    public int getFrequentRentalPoints()
-    {
-        return (getMovie().getPriceCode() == Movie.Code.NEW_RELEASE) && getDaysRented() > 1 ? 2 : 1;
+        return _movie;
     }
 }
