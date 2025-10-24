@@ -1,6 +1,6 @@
 package ficha3;
 
-import v9.Price;
+import ficha3.Price;
 
 public class NewReleasePrice extends Price
 {
