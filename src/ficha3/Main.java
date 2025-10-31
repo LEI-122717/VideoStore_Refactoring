@@ -6,15 +6,15 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 import demo.Database;
-import vNew.BestPrice;
-import vNew.ChildrensPrice;
-import vNew.Customer;
-import vNew.MafiaPrice;
-import vNew.Movie;
-import vNew.NewReleasePrice;
-import vNew.Price;
-import vNew.RegularPrice;
-import vNew.Rental;
+import ficha3.BestPrice;
+import ficha3.ChildrensPrice;
+import ficha3.Customer;
+import ficha3.MafiaPrice;
+import ficha3.Movie;
+import ficha3.NewReleasePrice;
+import ficha3.Price;
+import ficha3.RegularPrice;
+import ficha3.Rental;
 
 /***********************************************************
  * Filename: Main.java
@@ -38,23 +38,23 @@ public abstract class Main
         switch (response)
         {
             case 1:
-                vNew.Customer who = new vNew.Customer("Barack Obama");
+                ficha3.Customer who = new ficha3.Customer("Barack Obama");
 
-                vNew.Price p1 = new RegularPrice(false);
-                vNew.Movie m1 = new vNew.Movie("Life of Amalia", p1);
-                vNew.Price p2 = new ChildrensPrice();
-                vNew.Movie m2 = new vNew.Movie("Peter Pan", p2);
-                vNew.Price p3 = new NewReleasePrice(true);
-                vNew.Movie m3 = new vNew.Movie("Donna del Lago", p3);
-                vNew.Price p4 = new BestPrice();
-                vNew.Movie m4 = new vNew.Movie("La Belle Epoque", p4);
-                Price p5 = new vNew.MafiaPrice(true);
-                vNew.Movie m5 = new Movie("Al Capone 2", new MafiaPrice(true));
+                ficha3.Price p1 = new RegularPrice(false);
+                ficha3.Movie m1 = new ficha3.Movie("Life of Amalia", p1);
+                ficha3.Price p2 = new ChildrensPrice();
+                ficha3.Movie m2 = new ficha3.Movie("Peter Pan", p2);
+                ficha3.Price p3 = new NewReleasePrice(true);
+                ficha3.Movie m3 = new ficha3.Movie("Donna del Lago", p3);
+                ficha3.Price p4 = new BestPrice();
+                ficha3.Movie m4 = new ficha3.Movie("La Belle Epoque", p4);
+                Price p5 = new ficha3.MafiaPrice(true);
+                ficha3.Movie m5 = new Movie("Al Capone 2", new MafiaPrice(true));
 
-                who.addRental(new vNew.Rental(m1, 1));
-                who.addRental(new vNew.Rental(m2, 2));
-                who.addRental(new vNew.Rental(m3, 3));
-                who.addRental(new vNew.Rental(m4, 2));
+                who.addRental(new ficha3.Rental(m1, 1));
+                who.addRental(new ficha3.Rental(m2, 2));
+                who.addRental(new ficha3.Rental(m3, 3));
+                who.addRental(new ficha3.Rental(m4, 2));
                 who.addRental(new Rental(m5, 7));
 
                 Database.store(who);
@@ -81,7 +81,7 @@ public abstract class Main
     public static void LoadDB() throws IOException
     {
 //		query um customer pelo nome
-        vNew.Customer who = Database.get(Customer.class,  "_name", "Barack Obama");
+        ficha3.Customer who = Database.get(Customer.class,  "_name", "Barack Obama");
 
         System.out.println(who.statement());
 

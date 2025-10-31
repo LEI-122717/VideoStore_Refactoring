@@ -1,20 +1,20 @@
 package ficha3;
 
-import vNew.Rental;
+import ficha3.Rental;
 
 import java.util.Vector;
 
 public class Customer
 {
     private String			_name;
-    private Vector<vNew.Rental>	_rentals	= new Vector<vNew.Rental>();
+    private Vector<ficha3.Rental>	_rentals	= new Vector<ficha3.Rental>();
 
     public Customer(String _name)
     {
         this._name = _name;
     }
 
-    public void addRental(vNew.Rental arg)
+    public void addRental(ficha3.Rental arg)
     {
         _rentals.addElement(arg);
     }
@@ -31,7 +31,7 @@ public class Customer
         result += "\tMovie\t\tDays\tCost\tPoints\tBlu-ray\n";
         result += "-----------------------------------------------------------------\n";
 
-        for (vNew.Rental each : _rentals)
+        for (ficha3.Rental each : _rentals)
             result += "\t" + each.getMovie().getTitle() + "\t"
                     + each.getDaysRented() + "\t"
                     + each.getMovie().getPrice().getRentalAmount(each.getDaysRented()) + "\t"
@@ -60,7 +60,7 @@ public class Customer
                 "\t\t<th>Blu-ray</th>\n" +
                 "</tr>\n";
 
-        for (vNew.Rental each : _rentals)
+        for (ficha3.Rental each : _rentals)
             result +="\t\t<tr>\nn" +
                     "\t\t\t<td>" + each.getMovie().getTitle() + "</td>\n" +
                     "\t\t\t<td>" + each.getDaysRented() + "</td>\n" +
@@ -82,7 +82,7 @@ public class Customer
     public int getTotalFrequentRenterPoints()
     {
         int frequentRenterPoints = 0;
-        for (vNew.Rental each : _rentals)
+        for (ficha3.Rental each : _rentals)
             frequentRenterPoints += each._movie.getPrice().getFrequentRentalPoints(each.getDaysRented());
         return frequentRenterPoints;
     }
