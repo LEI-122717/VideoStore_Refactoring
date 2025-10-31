@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ClassDiagram>
-    <Class name="v9.ChildrensPrice" x="217" y="284">
+    <Class name="vNew.RegularPrice" x="6" y="304">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -8,9 +8,10 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Extension destinationClassName="v9.Price"/>
+        <Extension destinationClassName="vNew.Price"/>
+        <Communication destinationClassName="vNew.Price"/>
     </Class>
-    <Class name="v9.Movie" x="232" y="33">
+    <Class name="vNew.NewReleasePrice" x="395" y="305">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -18,20 +19,10 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Association destinationClassName="v9.Price"
-            endpointName="_price" kind="Simple"/>
+        <Extension destinationClassName="vNew.Price"/>
+        <Communication destinationClassName="vNew.Price"/>
     </Class>
-    <Class name="v9.NewReleasePrice" x="23" y="284">
-        <AttributesDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"/>
-        <MethodDisplayFilter public-accepted="true"
-            private-accepted="true" protected-accepted="true"
-            default-accepted="true" static-accepted="true"
-            accessors-accepted="true" constructors-accepted="false"/>
-        <Extension destinationClassName="v9.Price"/>
-    </Class>
-    <Class name="v9.Rental" x="447" y="26">
+    <Class name="vNew.Rental" x="444" y="25">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -39,10 +30,10 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="true"/>
-        <Association destinationClassName="v9.Movie"
+        <Association destinationClassName="vNew.Movie"
             endpointName="_movie" kind="Simple"/>
     </Class>
-    <Class name="v9.Customer" x="680" y="3">
+    <Class name="vNew.Price" x="184" y="160">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -50,12 +41,33 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Association destinationClassName="v9.Rental"
+    </Class>
+    <Class name="vNew.Customer" x="676" y="2">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="false"/>
+        <Association destinationClassName="vNew.Rental"
             endpointName="_rentals" kind="Simple"/>
-        <Communication destinationClassName="v9.Movie"/>
-        <Communication destinationClassName="v9.Price"/>
+        <Communication destinationClassName="vNew.Rental"/>
+        <Communication destinationClassName="vNew.Price"/>
+        <Communication destinationClassName="vNew.Movie"/>
     </Class>
-    <Class name="v9.RegularPrice" x="415" y="283">
+    <Class name="vNew.BestPrice" x="589" y="303">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="false"
+            accessors-accepted="true" constructors-accepted="false"/>
+        <Extension destinationClassName="vNew.Price"/>
+        <Communication destinationClassName="vNew.Price"/>
+    </Class>
+    <Class name="vNew.Movie" x="228" y="32">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -63,9 +75,10 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
-        <Extension destinationClassName="v9.Price"/>
+        <Association destinationClassName="vNew.Price"
+            endpointName="_price" kind="Simple"/>
     </Class>
-    <Class name="v9.Price" x="187" y="166">
+    <Class name="vNew.ChildrensPrice" x="200" y="305">
         <AttributesDisplayFilter public-accepted="true"
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"/>
@@ -73,5 +86,7 @@
             private-accepted="true" protected-accepted="true"
             default-accepted="true" static-accepted="true"
             accessors-accepted="true" constructors-accepted="false"/>
+        <Extension destinationClassName="vNew.Price"/>
+        <Communication destinationClassName="vNew.Price"/>
     </Class>
 </ClassDiagram>

@@ -1,0 +1,28 @@
+package ficha3;
+
+import vNew.Price;
+
+public class BestPrice extends Price
+{
+	public BestPrice()
+	{
+	}
+	
+	public BestPrice(boolean blueray)
+	{
+		super(blueray);
+	}
+
+	@Override
+	public double getRentalAmount(int duration)
+	{
+		return duration + (is_blueray() ? 1 : 0);
+	}
+
+	@Override
+	public int getFrequentRentalPoints(int duration)
+	{
+		return is_blueray() ? 1 : 0;
+	}
+
+}
