@@ -1,13 +1,13 @@
 package ficha3;
 
-import vNew.Movie;
+import ficha3.Movie;
 
 public class Rental
 {
-    vNew.Movie _movie;
+    ficha3.Movie _movie;
     private int		_daysRented;
 
-    public Rental(vNew.Movie movie, int daysRented)
+    public Rental(ficha3.Movie movie, int daysRented)
     {
         _movie = movie;
         _daysRented = daysRented;

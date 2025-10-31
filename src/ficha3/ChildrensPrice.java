@@ -1,6 +1,6 @@
 package ficha3;
 
-import vNew.Price;
+import ficha3.Price;
 
 public class ChildrensPrice extends Price
 {
