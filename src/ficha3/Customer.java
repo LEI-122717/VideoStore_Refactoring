@@ -61,7 +61,7 @@ public class Customer
                 "</tr>\n";
 
         for (vNew.Rental each : _rentals)
-            result +="\t\t<tr>\n" +
+            result +="\t\t<tr>\nn" +
                     "\t\t\t<td>" + each.getMovie().getTitle() + "</td>\n" +
                     "\t\t\t<td>" + each.getDaysRented() + "</td>\n" +
                     "\t\t\t<td>" + each.getMovie().getPrice().getRentalAmount(each.getDaysRented()) + "</td>\n" +
